@@ -2,34 +2,55 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="cinxo.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cinxo.FXMLDocumentController">
    <children>
-      <AnchorPane layoutX="180.0" layoutY="168.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="784.0" layoutY="3.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="42.0">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-         <graphic>
-            <FontAwesomeIconView glyphName="CLOSE" />
-         </graphic>
-      </Button>
-      <Button layoutX="741.0" layoutY="3.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="42.0">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-         <graphic>
-            <FontAwesomeIconView glyphName="MINUS" />
-         </graphic>
-      </Button>
-      <FontAwesomeIconView glyphName="USER" layoutX="373.0" layoutY="174.0" size="110" text="" wrappingWidth="80.00003662109361" />
-      <Label layoutX="374.0" layoutY="181.0" text="Sign In">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Label>
+      <AnchorPane prefHeight="30.0" prefWidth="220.0" styleClass="bg-form" stylesheets="@LoginDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button layoutX="650.0" layoutY="7.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="42.0" styleClass="close" stylesheets="@LoginDesign.css">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" text="" />
+               </graphic>
+            </Button>
+            <Button layoutX="606.0" layoutY="7.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="42.0" styleClass="minimize" stylesheets="@LoginDesign.css">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="MINUS" />
+               </graphic>
+            </Button>
+            <FontAwesomeIconView fill="#bd2842" glyphName="USER" layoutX="310.0" layoutY="197.0" size="110" text="" wrappingWidth="80.00003662109361" />
+            <Label layoutX="311.0" layoutY="213.0" text="Sign In" textFill="#fff7f7">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <TextField layoutX="240.0" layoutY="264.0" prefHeight="30.0" prefWidth="220.0" promptText="UserName" styleClass="textfield" stylesheets="@LoginDesign.css">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            <PasswordField layoutX="240.0" layoutY="307.0" prefHeight="30.0" prefWidth="220.0" promptText="PassWord" styleClass="textfield" stylesheets="@LoginDesign.css">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </PasswordField>
+            <Button layoutX="311.0" layoutY="359.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" styleClass="login-btn" stylesheets="@LoginDesign.css" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Hyperlink layoutX="289.0" layoutY="445.0" text="Create a new account" />
+         </children></AnchorPane>
    </children>
 </AnchorPane>
