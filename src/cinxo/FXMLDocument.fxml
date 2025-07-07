@@ -29,8 +29,8 @@
                   <FontAwesomeIconView fill="WHITE" glyphName="MINUS" />
                </graphic>
             </Button>
-            <FontAwesomeIconView fill="#bd2842" glyphName="USER" layoutX="310.0" layoutY="197.0" size="110" text="" wrappingWidth="80.00003662109361" />
-            <Label layoutX="311.0" layoutY="213.0" text="Sign In" textFill="#fff7f7">
+            <FontAwesomeIconView fill="#bd2842" glyphName="USER" layoutX="311.0" layoutY="209.0" size="110" text="" wrappingWidth="80.00003662109361" />
+            <Label layoutX="312.0" layoutY="221.0" text="Sign In" textFill="#f25b5b">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

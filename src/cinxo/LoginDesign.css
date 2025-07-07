@@ -64,3 +64,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-border-color: transparent;
     -fx-border-width: 0px;  
 }
+.hyperlink:hover{
+    -fx-text-fill: ff7b7b;
+}
