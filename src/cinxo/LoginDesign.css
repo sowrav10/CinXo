@@ -40,6 +40,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .textfield:focused{
     -fx-border-color: #fb6363;
     -fx-border-width: 0px 0px 1px 0px;
+    -fx-text-size:13px;
 }
 
 .login-btn {
@@ -51,4 +52,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-text-fill: #fff;
     -fx-font-size: 14px;
     -fx-cursor: hand;
+}
+.login-btn:hover{
+    
+    -fx-background-color: linear-gradient (to bottom right, #3862c2, #4284d0);
+}
+
+.hyperlink{
+    -fx-underline: false;
+    -fx-text-fill: #fb6363;
+    -fx-border-color: transparent;
+    -fx-border-width: 0px;  
 }
