@@ -44,9 +44,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 
 .login-btn {
-    -fx-background-color: linear-gradient(to bottom right, #35529d, #2371d0);
+    -fx-background-color: linear-gradient(to bottom right, #35529d, #ae2d3c);
     -fx-background-radius: 8px;
-    -fx-border-color: #ffffff; /* white border */
+    -fx-border-color: #ff5776; 
     -fx-border-width: 2px;
     -fx-border-radius: 8px;
     -fx-text-fill: #fff;
@@ -66,4 +66,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 .hyperlink:hover{
     -fx-text-fill: ff7b7b;
+}
+.signup{
+    
+    -fx-background-color: linear-gradient(to bottom right, #3e785c, #399a73);
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+}
+
+.signup:hover{
+    -fx-background-color: linear-gradient(to bottom right, #4d9a76, #45b796);
 }
