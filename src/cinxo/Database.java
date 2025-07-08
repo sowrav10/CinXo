@@ -4,22 +4,26 @@
  */
 package cinxo;
 
-import com.sun.jdi.connect.spi.Connection;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
-/**
- *
- * @author Bijoy
- */
-//public class Database {
+public class Database {
     
-  //  public static Connection connectDb(){
-       // try{
-            //class.forName("com.mysql.jdbc.Driver");
-            
-           // Connection connect = DriverManager.getConnection("jdbc:mysql","","");
-            
-      //  }catch(Exception e) {e. printStackTrace();}
-        
-   // }
-    
-//}
+    public static Connection connectDb() {
+        try {
+            // Load MySQL JDBC Driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Connect to database
+            Connection connect = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/movieBook", "root", ""
+            );
+            return connect;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+}
+
