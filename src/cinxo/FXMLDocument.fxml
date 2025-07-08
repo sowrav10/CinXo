@@ -13,7 +13,7 @@
    <children>
       <AnchorPane fx:id="signin_form" prefHeight="30.0" prefWidth="220.0" styleClass="bg-form" stylesheets="@LoginDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="signup_close" layoutX="650.0" layoutY="7.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="42.0" styleClass="close" stylesheets="@LoginDesign.css">
+            <Button fx:id="signin_close" layoutX="650.0" layoutY="7.0" mnemonicParsing="false" onAction="#signin_close" prefHeight="26.0" prefWidth="42.0" styleClass="close" stylesheets="@LoginDesign.css">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -21,7 +21,7 @@
                   <FontAwesomeIcon fill="#f4f4f4" glyphName="CLOSE" styleClass="close" />
                </graphic>
             </Button>
-            <Button fx:id="signup_minimize" layoutX="606.0" layoutY="7.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="42.0" styleClass="minimize" stylesheets="@LoginDesign.css">
+            <Button fx:id="signin_minimize" layoutX="606.0" layoutY="7.0" mnemonicParsing="false" onAction="#signin_minimize" prefHeight="26.0" prefWidth="42.0" styleClass="minimize" stylesheets="@LoginDesign.css">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -49,26 +49,26 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Hyperlink fx:id="signin_create_ac" layoutX="289.0" layoutY="445.0" stylesheets="@LoginDesign.css" text="Create a new account" />
+            <Hyperlink fx:id="signin_create_ac" layoutX="289.0" layoutY="445.0" onAction="#switchForm" stylesheets="@LoginDesign.css" text="Create a new account" />
             <FontAwesomeIcon fill="#d75757" glyphName="USER" layoutX="313.0" layoutY="206.0" size="8em" text="" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="signup_form" layoutY="-1.0" prefHeight="506.0" prefWidth="703.0" styleClass="bg-form" stylesheets="@LoginDesign.css" visible="false">
          <children>
-            <Button fx:id="signup_close" layoutX="650.0" layoutY="7.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="42.0" styleClass="close" stylesheets="@LoginDesign.css">
+            <Button fx:id="signup_close" layoutX="650.0" layoutY="7.0" mnemonicParsing="false" onAction="#signup_close" prefHeight="26.0" prefWidth="42.0" styleClass="close" stylesheets="@LoginDesign.css">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
                <graphic>
-                  <FontAwesomeIcon glyphName="CLOSE" styleClass="close" />
+                  <FontAwesomeIcon fill="#fffefe" glyphName="CLOSE" styleClass="close" />
                </graphic>
             </Button>
-            <Button fx:id="signup_minimize" layoutX="606.0" layoutY="7.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="42.0" styleClass="minimize" stylesheets="@LoginDesign.css">
+            <Button fx:id="signup_minimize" layoutX="606.0" layoutY="7.0" mnemonicParsing="false" onAction="#signup_minimize" prefHeight="26.0" prefWidth="42.0" styleClass="minimize" stylesheets="@LoginDesign.css">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
                <graphic>
-                  <FontAwesomeIcon glyphName="MINUS" />
+                  <FontAwesomeIcon fill="WHITE" glyphName="MINUS" />
                </graphic>
             </Button>
             <Label layoutX="306.0" layoutY="177.0" text="Sign Up" textFill="#f25b5b">
@@ -91,7 +91,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Hyperlink fx:id="signup_alreadyhaveac" layoutX="289.0" layoutY="445.0" stylesheets="@LoginDesign.css" text="Already have an account?" />
+            <Hyperlink fx:id="signup_alreadyhaveac" layoutX="289.0" layoutY="445.0" onAction="#switchForm" stylesheets="@LoginDesign.css" text="Already have an account?" />
             <FontAwesomeIcon fill="#f75757" glyphName="USER_PLUS" layoutX="301.0" layoutY="163.0" size="8em" />
             <TextField fx:id="signup_email" layoutX="242.0" layoutY="222.0" prefHeight="30.0" prefWidth="220.0" promptText="Email Address" styleClass="textfield" stylesheets="@LoginDesign.css">
                <font>
