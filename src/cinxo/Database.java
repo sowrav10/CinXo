@@ -4,10 +4,22 @@
  */
 package cinxo;
 
+import com.sun.jdi.connect.spi.Connection;
+
 /**
  *
  * @author Bijoy
  */
-public class Database {
+//public class Database {
     
-}
+  //  public static Connection connectDb(){
+       // try{
+            //class.forName("com.mysql.jdbc.Driver");
+            
+           // Connection connect = DriverManager.getConnection("jdbc:mysql","","");
+            
+      //  }catch(Exception e) {e. printStackTrace();}
+        
+   // }
+    
+//}
