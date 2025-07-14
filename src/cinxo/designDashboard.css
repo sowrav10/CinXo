@@ -1,0 +1,33 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jul 15, 2025, 5:15:41 AM
+    Author     : Bijoy
+*/
+
+.top-form{
+    -fx-background-color: #fff;
+    -fx-border-color: #000;
+    -fx-border-width: .2px .2px .4px .2px;
+}
+
+.close{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.close:hover{
+    
+    -fx-background-color: #e74141;
+}
+.minimize{
+    
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    
+}
+.minimize:hover{
+    -fx-background-color: #dadada;
+}
