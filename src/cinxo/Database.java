@@ -16,7 +16,7 @@ public class Database {
 
             // Connect to database
             Connection connect = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/movieBook", "root", ""
+                "jdbc:mysql://localhost:3306/moviebook", "root", ""
             );
             return connect;
 

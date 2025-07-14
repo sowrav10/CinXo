@@ -13,7 +13,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cinxo.FXMLDocumentController">
    <children>
-      <AnchorPane fx:id="signin_form" prefHeight="30.0" prefWidth="220.0" styleClass="bg-form" stylesheets="@LoginDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="signin_form" prefHeight="30.0" prefWidth="220.0" styleClass="bg-form" stylesheets="@LoginDesign.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Button fx:id="signin_close" layoutX="650.0" layoutY="7.0" mnemonicParsing="false" onAction="#signin_close" prefHeight="26.0" prefWidth="42.0" styleClass="close" stylesheets="@LoginDesign.css">
                <font>
@@ -36,12 +36,12 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="signin_username" layoutX="445.0" layoutY="221.0" prefHeight="30.0" prefWidth="220.0" promptText="UserName" styleClass="textfield" stylesheets="@LoginDesign.css">
+            <TextField fx:id="signin_username" layoutX="445.0" layoutY="221.0" onAction="#signin" prefHeight="30.0" prefWidth="220.0" promptText="UserName" styleClass="textfield" stylesheets="@LoginDesign.css">
                <font>
                   <Font name="System Italic" size="12.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="signin_password" layoutX="445.0" layoutY="264.0" prefHeight="30.0" prefWidth="220.0" promptText="PassWord" styleClass="textfield" stylesheets="@LoginDesign.css">
+            <PasswordField fx:id="signin_password" layoutX="445.0" layoutY="264.0" onAction="#signin" prefHeight="30.0" prefWidth="220.0" promptText="PassWord" styleClass="textfield" stylesheets="@LoginDesign.css">
                <font>
                   <Font name="System Italic" size="12.0" />
                </font>
@@ -64,7 +64,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="signup_form" prefHeight="506.0" prefWidth="703.0" styleClass="bg-form" stylesheets="@LoginDesign.css" visible="false">
+      <AnchorPane fx:id="signup_form" prefHeight="506.0" prefWidth="703.0" styleClass="bg-form" stylesheets="@LoginDesign.css">
          <children>
             <AnchorPane layoutX="292.0" layoutY="-1.0" prefHeight="520.0" prefWidth="410.0" styleClass="bg2-form" stylesheets="@LoginDesign.css">
                <children>
@@ -106,12 +106,12 @@
                   <Font name="System Italic" size="12.0" />
                </font>
             </PasswordField>
-            <Button fx:id="signup_singupbtn" layoutX="121.0" layoutY="374.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" styleClass="signup" stylesheets="@LoginDesign.css" text="Sign Up" textFill="WHITE">
+            <Button fx:id="signup_singupbtn" layoutX="121.0" layoutY="369.0" mnemonicParsing="false" onAction="#signup" prefHeight="35.0" prefWidth="78.0" styleClass="signup" stylesheets="@LoginDesign.css" text="Sign Up" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Hyperlink fx:id="signup_alreadyhaveac" layoutX="99.0" layoutY="443.0" onAction="#switchForm" stylesheets="@LoginDesign.css" text="Already have an account?" />
+            <Hyperlink fx:id="signup_alreadyhaveac" layoutX="89.0" layoutY="447.0" onAction="#switchForm" stylesheets="@LoginDesign.css" text="Already have an account?" />
             <FontAwesomeIcon fill="#f75757" glyphName="USER_PLUS" layoutX="111.0" layoutY="161.0" size="8em" />
             <TextField fx:id="signup_email" layoutX="52.0" layoutY="220.0" prefHeight="30.0" prefWidth="220.0" promptText="Email Address" styleClass="textfield" stylesheets="@LoginDesign.css">
                <font>

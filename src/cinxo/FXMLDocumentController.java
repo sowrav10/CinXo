@@ -15,7 +15,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -64,7 +67,55 @@ public class FXMLDocumentController implements Initializable {
     private ResultSet result;
     
     
-public void signin() {
+
+    public void signup(){
+        
+        String sql =  "INSERT INTO admin (emailx, username, password) VALUEs (?,?,?)";
+        
+        connect = Database.connectDb();
+        
+        try{
+            
+            prepare = connect.prepareStatement(sql);
+            prepare.setString(1, signup_email.getText());
+            prepare.setString(2, signup_username.getText());
+            prepare.setString(3, signup_password.getText());
+            
+            Alert alert;
+            
+            if (signup_email.getText().isEmpty() || signup_username.getText().isEmpty() || signup_password.getText().isEmpty()) {
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill all blank fields");
+            alert.showAndWait();
+       
+        } else if(signup_password.getText().length()< 8){
+        alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid Password!");
+            alert.showAndWait();
+        
+        }else {
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Succesfully create a new account!");
+            alert.showAndWait();
+            
+            signup_email.setText("");
+            signup_username.setText("");
+            signup_password.setText(" ");
+        }
+            
+        }catch(Exception e) {e.printStackTrace();}
+        
+        
+    }
+    
+    
+    public void signin() {
 
     String sql = "SELECT * FROM admin WHERE Username = ? AND Password = ?";
 
@@ -78,6 +129,10 @@ public void signin() {
             alert.setContentText("Please fill all blank fields");
             alert.showAndWait();
             return;
+            
+    
+            
+            
         }
 
         prepare = connect.prepareStatement(sql);
@@ -93,6 +148,17 @@ public void signin() {
             alert.setHeaderText(null);
             alert.setContentText("Successfully Logged In!");
             alert.showAndWait();
+            
+            signin_loginbtn.getScene().getWindow().hide();
+            
+            Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
+            
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+            
 
             // TODO: Load dashboard or new scene here
         } else {
