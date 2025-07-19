@@ -1,30 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cinxo.DashboardController">
    <children>
-      <BorderPane layoutY="1.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+      <BorderPane layoutX="1.0" layoutY="1.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="1.0">
          <top>
             <AnchorPane prefHeight="38.0" prefWidth="1100.0" styleClass="top-form" stylesheets="@designDashboard.css" BorderPane.alignment="CENTER">
                <children>
                   <AnchorPane layoutX="1.2" layoutY="-0.8" prefHeight="33.0" prefWidth="1100.0" styleClass="top" stylesheets="@designDashboard.css" AnchorPane.bottomAnchor="9.400000000000013" AnchorPane.leftAnchor="1.2" AnchorPane.rightAnchor="1.2000000000005002" AnchorPane.topAnchor="-0.8">
                      <children>
-                        <Button layoutX="1063.0" layoutY="3.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="42.0" styleClass="close" stylesheets="@designDashboard.css" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                        <Button layoutX="1063.0" layoutY="3.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="42.0" stylesheets="@designDashboard.css" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
                            <graphic>
                               <FontAwesomeIcon glyphName="CLOSE" size="1.2em" />
                            </graphic>
+                           <styleClass>
+                              <String fx:value="close" />
+                              <String fx:value="shadow" />
+                           </styleClass>
                         </Button>
-                        <Button layoutX="1012.0000000000001" layoutY="2.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="42.0" styleClass="minimize" stylesheets="@designDashboard.css" AnchorPane.rightAnchor="45.59999999999991" AnchorPane.topAnchor="2.0">
+                        <Button layoutX="1012.0000000000001" layoutY="2.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="42.0" stylesheets="@designDashboard.css" AnchorPane.rightAnchor="45.59999999999991" AnchorPane.topAnchor="2.0">
                            <graphic>
                               <FontAwesomeIcon glyphName="MINUS" size="1.2em" />
                            </graphic>
+                           <styleClass>
+                              <String fx:value="minimize" />
+                              <String fx:value="shadow" />
+                           </styleClass>
                         </Button>
                         <Label layoutX="31.0" layoutY="5.0" text="CinXo  -  Book your movie now!">
                            <font>
@@ -38,22 +46,162 @@
             </AnchorPane>
          </top>
          <left>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@designDashboard.css" BorderPane.alignment="CENTER">
                <children>
-                  <FontAwesomeIcon glyphName="USER" layoutX="65.0" layoutY="108.0" size="7.5em" />
-                  <Label layoutX="68.0" layoutY="121.0" text="Welcome">
+                  <FontAwesomeIcon fill="#ecd1d1" glyphName="USER" layoutX="65.0" layoutY="108.0" size="7.5em" />
+                  <Label layoutX="68.0" layoutY="121.0" text="Welcome" textFill="#ecd1d1">
                      <font>
                         <Font name="Microsoft Sans Serif" size="15.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="147.0" text="YOUR USERNAME">
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="148.0" text="Admin" textFill="#ecd1d1">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
+                  <Button layoutX="17.0" layoutY="197.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" stylesheets="@designDashboard.css" text="Dashboard">
+                     <graphic>
+                        <FontAwesomeIcon fill="#ecd1d1" glyphName="DASHBOARD" size="1.5em" />
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="nav-btn" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="17.0" layoutY="236.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" stylesheets="@designDashboard.css" text="Add Movies">
+                     <graphic>
+                        <FontAwesomeIcon fill="#ecd1d1" glyphName="PLUS" size="1.5em" />
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="nav-btn" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="17.0" layoutY="275.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" stylesheets="@designDashboard.css" text="Available Movies">
+                     <graphic>
+                        <FontAwesomeIcon fill="#ecd1d1" glyphName="SERVER" size="1.5em" />
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="nav-btn" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="17.0" layoutY="314.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" stylesheets="@designDashboard.css" text="Edit Screening">
+                     <graphic>
+                        <FontAwesomeIcon fill="#ecd1d1" glyphName="EDIT" size="1.5em" />
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="nav-btn" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="17.0" layoutY="353.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" stylesheets="@designDashboard.css" text="Customers">
+                     <graphic>
+                        <FontAwesomeIcon fill="#ecd1d1" glyphName="USERS" size="1.5em" />
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="nav-btn" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="20.0" layoutY="512.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="50.0" stylesheets="@designDashboard.css">
+                     <graphic>
+                        <FontAwesomeIcon fill="#ecd1d1" glyphName="SIGN_OUT" size="2em" />
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="signout" />
+                     </styleClass>
+                  </Button>
+                  <Label layoutX="77.0" layoutY="521.0" text="Sign OUT" textFill="#ecd1d1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
                </children>
+               <styleClass>
+                  <String fx:value="nav-form" />
+                  <String fx:value="shadow" />
+               </styleClass>
             </AnchorPane>
          </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="9.0" prefHeight="560.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="182.0" prefWidth="874.0" stylesheets="@designDashboard.css" visible="false">
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="bg-white" />
+                           </styleClass>
+                           <children>
+                              <AnchorPane layoutX="31.0" layoutY="13.0" prefHeight="154.0" prefWidth="248.0" stylesheets="@designDashboard.css">
+                                 <children>
+                                    <AnchorPane layoutY="2.0" prefHeight="150.0" prefWidth="76.0" styleClass="card1-left" stylesheets="@designDashboard.css" />
+                                    <Label layoutX="78.0" layoutY="112.0" styleClass="shadow" stylesheets="@designDashboard.css" text="Sold Tickets Today" textFill="WHITE">
+                                       <font>
+                                          <Font name="Microsoft Sans Serif" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="167.0" layoutY="13.0" styleClass="shadow" stylesheets="@designDashboard.css" text="1500" textFill="WHITE">
+                                       <font>
+                                          <Font name="Microsoft Sans Serif" size="30.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="card1" />
+                                    <String fx:value="card" />
+                                 </styleClass>
+                              </AnchorPane>
+                              <AnchorPane layoutX="314.0" layoutY="15.0" prefHeight="154.0" prefWidth="248.0" stylesheets="@designDashboard.css">
+                                 <children>
+                                    <AnchorPane layoutY="2.0" prefHeight="150.0" prefWidth="76.0" styleClass="card2-left" stylesheets="@designDashboard.css" />
+                                    <Label layoutX="88.0" layoutY="111.0" styleClass="shadow" stylesheets="@designDashboard.css" text="Total Earn Today" textFill="WHITE">
+                                       <font>
+                                          <Font name="Microsoft Sans Serif" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="169.0" layoutY="13.0" styleClass="shadow" stylesheets="@designDashboard.css" text="1500" textFill="WHITE">
+                                       <font>
+                                          <Font name="Microsoft Sans Serif" size="30.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="card2" />
+                                    <String fx:value="card" />
+                                 </styleClass>
+                              </AnchorPane>
+                              <AnchorPane layoutX="594.0" layoutY="15.0" prefHeight="154.0" prefWidth="248.0" stylesheets="@designDashboard.css">
+                                 <children>
+                                    <AnchorPane layoutY="2.0" prefHeight="150.0" prefWidth="76.0" styleClass="card3-left" stylesheets="@designDashboard.css" />
+                                    <Label layoutX="90.0" layoutY="115.0" styleClass="shadow" stylesheets="@designDashboard.css" text="Available Movies" textFill="WHITE">
+                                       <font>
+                                          <Font name="Microsoft Sans Serif" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="171.0" layoutY="14.0" styleClass="shadow" stylesheets="@designDashboard.css" text="1500" textFill="WHITE">
+                                       <font>
+                                          <Font name="Microsoft Sans Serif" size="30.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="card3" />
+                                    <String fx:value="card" />
+                                 </styleClass>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="316.0" layoutY="15.0" prefHeight="530.0" prefWidth="566.0" styleClass="bg-white" stylesheets="@designDashboard.css" />
+                        <AnchorPane layoutX="21.0" layoutY="15.0" prefHeight="530.0" prefWidth="269.0" styleClass="bg-white" stylesheets="@designDashboard.css" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>

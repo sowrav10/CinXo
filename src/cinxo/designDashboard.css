@@ -31,3 +31,80 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .minimize:hover{
     -fx-background-color: #dadada;
 }
+
+.shadow{
+    -fx-effect:dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);
+}
+
+.nav-form {
+    
+    -fx-background-color: linear-gradient(to top right, #1e242e, #ae2d3c);
+}
+
+.nav-btn{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+}
+.nav-btn:hover{
+    
+    -fx-background-color: #ae2d3c;
+}
+.signout{
+    -fx-background-color: #ae2d3c;
+    -fx-cursor: hand;
+    -fx-background-radius: 15px;
+}
+.signout:hover{
+    
+    -fx-background-color: #d62651;
+}
+
+.bg-white{
+    -fx-background-color: #fff;
+    -fx-effect:dropshadow(three-pass-box, rgba(0,0,0,0.3), 8,0,0,0);
+    -fx-background-radius: 8px;
+}
+.bg-white:hover{
+    -fx-effect:dropshadow(three-pass-box, rgba(0,0,0,0.5), 8,0,0,0);
+    
+}
+.card1{
+    -fx-background-color: linear-gradient(to right, #2b428c, #2e58ab);
+    -fx-background-radius: 0px 10px 10px 0px;
+}
+
+.card1-left{
+    -fx-background-color: linear-gradient(to right, #213778, #2b428c);
+}
+.card2{
+    -fx-background-color: linear-gradient(to right, #772d90, #a42fb8);
+    
+    -fx-background-radius: 0px 10px 10px 0px;
+}
+
+.card2-left{
+    -fx-background-color: linear-gradient(to right, #641f7f, #772d90);
+   
+}
+
+.card3{
+    -fx-background-color: linear-gradient(to right, #9d2249, #cc1c5a);
+    
+    -fx-background-radius: 0px 10px 10px 0px;
+}
+
+.card3-left{
+    -fx-background-color: linear-gradient(to right, #891a41, #9d2249);
+   
+}
+
+
+
+
+.card:hover{
+      -fx-effect:dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+  
+}

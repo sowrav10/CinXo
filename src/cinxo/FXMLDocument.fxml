@@ -13,7 +13,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cinxo.FXMLDocumentController">
    <children>
-      <AnchorPane fx:id="signin_form" prefHeight="30.0" prefWidth="220.0" styleClass="bg-form" stylesheets="@LoginDesign.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="signin_form" prefHeight="30.0" prefWidth="220.0" styleClass="bg-form" stylesheets="@LoginDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Button fx:id="signin_close" layoutX="650.0" layoutY="7.0" mnemonicParsing="false" onAction="#signin_close" prefHeight="26.0" prefWidth="42.0" styleClass="close" stylesheets="@LoginDesign.css">
                <font>
