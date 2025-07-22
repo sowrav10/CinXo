@@ -7,6 +7,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     Author     : Bijoy
 */
 
+.button {
+    -fx-cursor: hand;
+    -fx-background-color: #4CAF50;
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-transition: 0.2s ease-in-out;
+}
+
+.button:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-background-color: #45a049;
+}
+
 .top-form{
     -fx-background-color: #fff;
     -fx-border-color: #000;
@@ -111,4 +126,113 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 .add-textfield{
     
+    -fx-background-color: #fff;
+    
+    -fx-background-radius: 0px 5px 10px 0px;
+    -fx-border-color: le242e;
+    -fx-border-width: 8px;
+    -fx-border-radius: 0px 5px 0px 0px;
+    -fx-font-size:13px;
+    
+}
+.add-textfield:focused{
+    -fx-border-color:linear-gradient(to right, #ae2d3c, #a42fb8) ;
+    -fx-border-width:1.7px;
+}
+
+.insert-btn{
+    -fx-background-color: #3149a1;
+    
+    -fx-background-radius: 8px;
+    -fx-border-color: le242e;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+    -fx-font-size:14px;
+}
+.insert-btn:hover{
+    
+    -fx-background-color: #3c71C4;
+}
+.update-btn{
+    -fx-background-color: #337254;
+    
+    -fx-background-radius: 8px;
+    -fx-border-color: le242e;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+    -fx-font-size:14px;
+    
+    
+}
+.update-btn:hover{
+     -fx-background-color: #3ea185;
+}
+
+.delete-btn{
+    -fx-background-color: #962934;
+  
+    -fx-background-radius: 8px;
+    -fx-border-color: le242e;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+    -fx-font-size:14px;
+    
+}
+
+.delete-btn:hover{
+    -fx-background-color: #d33d63;
+}
+.search{
+    -fx-background-color: #fff;
+    -fx-background-radius: 0px 10px 0px 0px;
+    -fx-border-color: le242e;
+    -fx-border-width: 1px;    
+    -fx-font-size:14px;
+    -fx-border-radius: 0px 10px 0px 0px;
+    -fx-padding: 0px 0px 0px 25px;
+}
+.search:focused{
+    
+    -fx-border-color: linear-gradient(to right, #ae2d3c, #a42fb8) ;
+    -fx-border-width: 2px;
+}
+.table-view{
+    -fx-background-color: #fff;
+    -fx-background-radius: 10px;
+    -fx-border-color: ae2d3c;
+    -fx-border-radius: 10px;
+    -fx-fill:#fff;
+
+}
+.table-view .column-header-background{
+    
+    -fx-border-color: linear-gradient(to top left, #ae2d3c, #a42fb8) ;
+    -fx-background-insets: 0 0 0 0;
+    -fx-border-radius: 10px 10px 0px 0px;
+}
+.table-view .column-header, .table-view filler{
+    -fx-background-color: transparent;
+    -fx-size: 50px;
+    -fx-fill:#fff;
+    
+}
+
+.table-view .column-header .label{
+    -fx-text-fill:#fff;
+    
+}
+
+.info-card{
+    -fx-border-color: #ae2d3c;
+    -fx-border-radius: 10px 0px 0px 10px;
+    
+}
+
+.label-info{
+    
+    -fx-border-color: #ae2d3c;
+-fx-border-radius:0px 5px 0px 0px;
+-Ex-border-width: .8px;
+-fx-padding: 5px;
+-Ex-font-size:14px;
 }

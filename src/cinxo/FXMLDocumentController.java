@@ -87,7 +87,7 @@ public class FXMLDocumentController implements Initializable {
     public void signup() {
         String sql = "INSERT INTO admin (email, username, password) VALUES (?,?,?)";
 
-        String sql1 = "SELECT username FROM admin";
+        String sql1 = "SELECT username FROM admin WHERE username = ?";
 
         connect = Database.connectDb();
 
@@ -127,31 +127,34 @@ public class FXMLDocumentController implements Initializable {
                 if (validEmail()) {
 
                     prepare = connect.prepareStatement(sql1);
-                    result = prepare.executeQuery();
+prepare.setString(1, signup_username.getText());
+result = prepare.executeQuery();
 
-                    if (result.next()) {
-                        alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Error Message");
-                        alert.setHeaderText(null);
-                        alert.setContentText(signup_username.getText() + "was already exist!");
-                        alert.showAndWait();
-                    } else {
+if (result.next()) {
+    alert = new Alert(Alert.AlertType.ERROR);
+    alert.setTitle("Error Message");
+    alert.setHeaderText(null);
+    alert.setContentText(signup_username.getText() + " already exists!");
+    alert.showAndWait();
+    return;
+} else {
+    prepare = connect.prepareStatement(sql);  // Re-prepare for insert
+    prepare.setString(1, signup_email.getText());
+    prepare.setString(2, signup_username.getText());
+    prepare.setString(3, signup_password.getText());
+    prepare.execute();
 
-                        prepare.execute();
+    alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle("Information Message");
+    alert.setHeaderText(null);
+    alert.setContentText("Successfully created a new account!");
+    alert.showAndWait();
 
-                        alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Information Message");
-                        alert.setHeaderText(null);
-                        alert.setContentText("Successfully created a new account!");
-                        alert.showAndWait();
-
-                        // Clear fields
-                        signup_email.setText("");
-                        signup_username.setText("");
-                        signup_password.setText("");
-
-                        return;
-                    }
+    signup_email.setText("");
+    signup_username.setText("");
+    signup_password.setText("");
+    return;
+}
                 }
             }
 

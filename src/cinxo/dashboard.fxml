@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cinxo.DashboardController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1120.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cinxo.DashboardController">
    <children>
       <BorderPane layoutX="1.0" layoutY="1.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="1.0">
          <top>
@@ -132,7 +132,7 @@
          <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutX="9.0" prefHeight="560.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane layoutX="9.0" prefHeight="560.0" prefWidth="900.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="182.0" prefWidth="874.0" stylesheets="@designDashboard.css" visible="false">
                            <styleClass>
@@ -209,7 +209,14 @@
                                     <TableColumn prefWidth="139.20013427734375" text="Published Date" />
                                 </columns>
                               </TableView>
-                              <TextField layoutX="20.0" layoutY="14.0" prefHeight="29.0" prefWidth="220.0" styleClass="bg-white" stylesheets="@designDashboard.css" />
+                              <TextField layoutX="20.0" layoutY="14.0" prefHeight="29.0" prefWidth="220.0" promptText="Search" stylesheets="@designDashboard.css">
+                                 <font>
+                                    <Font name="System Italic" size="12.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="bg-white" />
+                                    <String fx:value="search" />
+                                 </styleClass></TextField>
                               <FontAwesomeIcon glyphName="SEARCH" layoutX="29.0" layoutY="34.0" size="1.25em" />
                            </children></AnchorPane>
                         <AnchorPane layoutX="21.0" layoutY="15.0" prefHeight="530.0" prefWidth="301.0" styleClass="bg-white" stylesheets="@designDashboard.css">
@@ -219,36 +226,94 @@
                                     <ImageView fitHeight="167.0" fitWidth="127.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
                                  </children>
                               </AnchorPane>
-                              <Button layoutX="126.0" layoutY="215.0" mnemonicParsing="false" text="Import" />
+                              <Button layoutX="126.0" layoutY="215.0" mnemonicParsing="false" styleClass="insert-btn" stylesheets="@designDashboard.css" text="Import" />
                               <Label layoutX="26.0" layoutY="274.0" text="Movie Title :">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="106.0" layoutY="270.0" prefHeight="26.0" prefWidth="182.0" styleClass="bg-white" stylesheets="@designDashboard.css" />
+                              <TextField layoutX="106.0" layoutY="270.0" prefHeight="26.0" prefWidth="182.0" stylesheets="@designDashboard.css">
+                                 <styleClass>
+                                    <String fx:value="bg-white" />
+                                    <String fx:value="add-textfield" />
+                                 </styleClass></TextField>
                               <Label layoutX="48.0" layoutY="310.0" text="Genere :">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="106.0" layoutY="306.0" prefHeight="26.0" prefWidth="182.0" styleClass="bg-white" stylesheets="@designDashboard.css" />
+                              <TextField layoutX="106.0" layoutY="306.0" prefHeight="26.0" prefWidth="182.0" stylesheets="@designDashboard.css">
+                                 <styleClass>
+                                    <String fx:value="bg-white" />
+                                    <String fx:value="add-textfield" />
+                                 </styleClass></TextField>
                               <Label layoutX="39.0" layoutY="346.0" text="Duration :">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="106.0" layoutY="342.0" prefHeight="26.0" prefWidth="182.0" styleClass="bg-white" stylesheets="@designDashboard.css" />
+                              <TextField layoutX="106.0" layoutY="342.0" prefHeight="26.0" prefWidth="182.0" stylesheets="@designDashboard.css">
+                                 <styleClass>
+                                    <String fx:value="bg-white" />
+                                    <String fx:value="add-textfield" />
+                                 </styleClass></TextField>
                               <Label layoutX="5.0" layoutY="380.0" text="Published Date :">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="106.0" layoutY="376.0" prefHeight="26.0" prefWidth="182.0" styleClass="bg-white" stylesheets="@designDashboard.css" />
-                              <Button layoutX="11.0" layoutY="431.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="83.0" text="Insert" />
-                              <Button layoutX="113.0" layoutY="431.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="83.0" text="Update" />
-                              <Button layoutX="204.0" layoutY="431.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="83.0" text="Delete" />
-                              <Button layoutX="204.0" layoutY="480.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="83.0" text="Clear" />
+                              <TextField layoutX="106.0" layoutY="376.0" prefHeight="26.0" prefWidth="182.0" stylesheets="@designDashboard.css">
+                                 <styleClass>
+                                    <String fx:value="bg-white" />
+                                    <String fx:value="add-textfield" />
+                                 </styleClass></TextField>
+                              <Button layoutX="11.0" layoutY="431.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="83.0" styleClass="insert-btn" stylesheets="@designDashboard.css" text="Insert" />
+                              <Button layoutX="113.0" layoutY="431.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="83.0" styleClass="update-btn" stylesheets="@designDashboard.css" text="Update" />
+                              <Button layoutX="204.0" layoutY="431.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="83.0" styleClass="delete-btn" stylesheets="@designDashboard.css" text="Delete" />
+                              <Button layoutX="204.0" layoutY="480.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="83.0" styleClass="delete-btn" stylesheets="@designDashboard.css" text="Clear" />
                            </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="282.0" layoutY="94.0" prefHeight="557.6" prefWidth="920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="15.0" layoutY="14.0" prefHeight="215.0" prefWidth="891.0" styleClass="bg-white" stylesheets="@designDashboard.css">
+                           <children>
+                              <AnchorPane prefHeight="215.0" prefWidth="265.0" styleClass="info-card" stylesheets="@designDashboard.css">
+                                 <children>
+                                    <Label layoutX="11.0" layoutY="24.0" text="Movie Tile: ">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="90.0" layoutY="20.0" prefHeight="30.0" prefWidth="143.0" styleClass="label-info" stylesheets="@designDashboard.css" text="Movie Tile: " />
+                                    <Label layoutX="33.0" layoutY="65.0" text="Genere: ">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="47.0" layoutY="106.0" text="Date: ">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button layoutX="72.0" layoutY="148.0" mnemonicParsing="false" text="Select Movie" />
+                                    <Label layoutX="90.0" layoutY="59.0" prefHeight="30.0" prefWidth="143.0" styleClass="label-info" stylesheets="@designDashboard.css" text="Movie Tile: " />
+                                    <Label layoutX="90.0" layoutY="101.0" prefHeight="30.0" prefWidth="143.0" styleClass="label-info" stylesheets="@designDashboard.css" text="Movie Tile: " />
+                                 </children>
+                              </AnchorPane>
+                              <TableView layoutX="276.0" layoutY="8.0" prefHeight="200.0" prefWidth="614.0" stylesheets="@designDashboard.css">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="C1" />
+                                  <TableColumn prefWidth="75.0" text="C2" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="15.0" layoutY="260.0" prefHeight="285.0" prefWidth="891.0" styleClass="bg-white" stylesheets="@designDashboard.css">
+                           <children>
+                              <AnchorPane prefHeight="283.0" prefWidth="265.0" styleClass="info-card" stylesheets="@designDashboard.css" />
+                           </children>
+                        </AnchorPane>
                      </children>
                   </AnchorPane>
                </children>
