@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,6 +29,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -161,7 +163,10 @@ if (result.next()) {
         } catch (Exception e) {
             e.printStackTrace();
         }
+       
     }
+    private double x = 0;
+    private double y = 0;
 
     public void signin() {
 
@@ -188,6 +193,9 @@ if (result.next()) {
             Alert alert;
 
             if (result.next()) {
+                
+                getData.username = signin_username.getText();
+                
                 alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Information Message");
                 alert.setHeaderText(null);
@@ -200,6 +208,19 @@ if (result.next()) {
 
                 Stage stage = new Stage();
                 Scene scene = new Scene(root);
+                root.setOnMousePressed((MouseEvent event) -> {
+                    x = event.getSceneX();
+                    y = event.getSceneY();
+                });
+
+                root.setOnMouseDragged((MouseEvent event) -> {
+
+                    stage.setX(event.getScreenX() - x);
+                    stage.setY(event.getScreenY() - y);
+
+                });
+
+                stage.initStyle(StageStyle.TRANSPARENT);
 
                 stage.setScene(scene);
                 stage.show();
