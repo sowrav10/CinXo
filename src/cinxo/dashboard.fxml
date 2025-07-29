@@ -4,6 +4,7 @@
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TableColumn?>
@@ -283,19 +284,19 @@
                            </children></AnchorPane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="addmovies_form" layoutX="3.0" layoutY="-3.0" prefHeight="573.0" prefWidth="916.0">
+                  <AnchorPane fx:id="addmovies_form" layoutX="3.0" layoutY="-3.0" prefHeight="573.0" prefWidth="916.0" visible="false">
                      <children>
                         <AnchorPane layoutX="340.0" layoutY="15.0" prefHeight="530.0" prefWidth="542.0" styleClass="bg-white" stylesheets="@designDashboard.css">
                            <children>
-                              <TableView fx:id="addMovies_tableView" layoutX="14.0" layoutY="65.0" prefHeight="456.0" prefWidth="540.0" styleClass="bg-white" stylesheets="@designDashboard.css">
+                              <TableView fx:id="addMovies_tableView" layoutX="14.0" layoutY="65.0" onMouseClicked="#selectAddMoviesList" prefHeight="456.0" prefWidth="540.0" styleClass="bg-white" stylesheets="@designDashboard.css">
                                  <columns>
                                     <TableColumn fx:id="addMovies_col_movieTitle" prefWidth="195.20001220703125" text="Movie Title" />
-                                    <TableColumn fx:id="addMovies_col_genere" prefWidth="122.4000244140625" text="Genere" />
+                                    <TableColumn fx:id="addMovies_col_genre" prefWidth="122.4000244140625" text="Genre" />
                                     <TableColumn fx:id="addMovies_col_duration" prefWidth="84.7999267578125" text="Duration" />
                                     <TableColumn fx:id="addMovies_col_date" prefWidth="139.20013427734375" text="Published Date" />
                                  </columns>
                               </TableView>
-                              <TextField fx:id="addMovies_search" layoutX="20.0" layoutY="14.0" prefHeight="29.0" prefWidth="220.0" promptText="Search" stylesheets="@designDashboard.css">
+                              <TextField fx:id="addMovies_search" layoutX="20.0" layoutY="14.0" onAction="#searchAddMovies" prefHeight="29.0" prefWidth="220.0" promptText="Search" stylesheets="@designDashboard.css">
                                  <font>
                                     <Font name="System Italic" size="12.0" />
                                  </font>
@@ -311,10 +312,10 @@
                            <children>
                               <AnchorPane layoutX="88.0" layoutY="21.0" prefHeight="167.0" prefWidth="127.0" styleClass="bg-white" stylesheets="@designDashboard.css">
                                  <children>
-                                    <ImageView fx:id="addMovies_imageview" fitHeight="167.0" fitWidth="127.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="addMovies_imageview" fitHeight="167.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" />
                                  </children>
                               </AnchorPane>
-                              <Button fx:id="addMovies_import" layoutX="126.0" layoutY="215.0" mnemonicParsing="false" styleClass="insert-btn" stylesheets="@designDashboard.css" text="Import" />
+                              <Button fx:id="addMovies_import" layoutX="126.0" layoutY="215.0" mnemonicParsing="false" onAction="#importImage" styleClass="insert-btn" stylesheets="@designDashboard.css" text="Import" />
                               <Label layoutX="26.0" layoutY="274.0" text="Movie Title :">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
@@ -326,12 +327,12 @@
                                     <String fx:value="add-textfield" />
                                  </styleClass>
                               </TextField>
-                              <Label layoutX="48.0" layoutY="310.0" text="Genere :">
+                              <Label layoutX="48.0" layoutY="310.0" text="Genre :">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="addMovies_genere" layoutX="106.0" layoutY="306.0" prefHeight="26.0" prefWidth="182.0" stylesheets="@designDashboard.css">
+                              <TextField fx:id="addMovies_genre" layoutX="106.0" layoutY="306.0" prefHeight="26.0" prefWidth="182.0" stylesheets="@designDashboard.css">
                                  <styleClass>
                                     <String fx:value="bg-white" />
                                     <String fx:value="add-textfield" />
@@ -353,21 +354,20 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="addMovies_date" layoutX="106.0" layoutY="376.0" prefHeight="26.0" prefWidth="182.0" stylesheets="@designDashboard.css">
+                              <Button fx:id="addMovies_insertBtn" layoutX="11.0" layoutY="431.0" mnemonicParsing="false" onAction="#insertAddMovies" prefHeight="36.0" prefWidth="83.0" styleClass="insert-btn" stylesheets="@designDashboard.css" text="Insert" />
+                              <Button fx:id="addMovies_updateBtn" layoutX="113.0" layoutY="431.0" mnemonicParsing="false" onAction="#updateAddMovies" prefHeight="36.0" prefWidth="83.0" styleClass="update-btn" stylesheets="@designDashboard.css" text="Update" />
+                              <Button fx:id="addMovies_deleteBtn" layoutX="204.0" layoutY="431.0" mnemonicParsing="false" onAction="#deleteAddMovies" prefHeight="36.0" prefWidth="83.0" styleClass="delete-btn" stylesheets="@designDashboard.css" text="Delete" />
+                              <Button fx:id="addMovies_clearBtn" layoutX="204.0" layoutY="480.0" mnemonicParsing="false" onAction="#clearAddMovieList" prefHeight="36.0" prefWidth="83.0" styleClass="delete-btn" stylesheets="@designDashboard.css" text="Clear" />
+                              <DatePicker fx:id="addMovies_date" layoutX="106.0" layoutY="376.0" prefHeight="26.0" prefWidth="178.0" promptText="MM-DD-YYYY" stylesheets="@designDashboard.css">
                                  <styleClass>
-                                    <String fx:value="bg-white" />
                                     <String fx:value="add-textfield" />
-                                 </styleClass>
-                              </TextField>
-                              <Button fx:id="addMovies_insertBtn" layoutX="11.0" layoutY="431.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="83.0" styleClass="insert-btn" stylesheets="@designDashboard.css" text="Insert" />
-                              <Button fx:id="addMovies_updateBtn" layoutX="113.0" layoutY="431.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="83.0" styleClass="update-btn" stylesheets="@designDashboard.css" text="Update" />
-                              <Button fx:id="addMovies_deleteBtn" layoutX="204.0" layoutY="431.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="83.0" styleClass="delete-btn" stylesheets="@designDashboard.css" text="Delete" />
-                              <Button fx:id="addMovies_clearBtn" layoutX="204.0" layoutY="480.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="83.0" styleClass="delete-btn" stylesheets="@designDashboard.css" text="Clear" />
+                                    <String fx:value="bg-white" />
+                                 </styleClass></DatePicker>
                            </children>
                         </AnchorPane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="availablemovies_form" layoutX="282.0" layoutY="94.0" prefHeight="557.6" prefWidth="920.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="availablemovies_form" layoutX="282.0" layoutY="94.0" prefHeight="557.6" prefWidth="920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane layoutX="15.0" layoutY="14.0" prefHeight="215.0" prefWidth="891.0" styleClass="bg-white" stylesheets="@designDashboard.css">
                            <children>
@@ -378,7 +378,7 @@
                                           <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="acailableMovies_movieTitle" layoutX="90.0" layoutY="20.0" prefHeight="30.0" prefWidth="143.0" styleClass="label-info" stylesheets="@designDashboard.css" text="Movie Tile: " />
+                                    <Label fx:id="acailableMovies_movieTitle" layoutX="90.0" layoutY="20.0" prefHeight="30.0" prefWidth="143.0" styleClass="label-info" stylesheets="@designDashboard.css" />
                                     <Label layoutX="33.0" layoutY="65.0" text="Genre: ">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
@@ -389,12 +389,12 @@
                                           <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Button fx:id="acailableMovies_selectMovie" layoutX="83.0" layoutY="158.0" mnemonicParsing="false" text="Select Movie" />
-                                    <Label fx:id="acailableMovies_movieGenre" layoutX="90.0" layoutY="59.0" prefHeight="30.0" prefWidth="143.0" styleClass="label-info" stylesheets="@designDashboard.css" text="Movie Tile: " />
-                                    <Label fx:id="acailableMovies_movieDate" layoutX="90.0" layoutY="101.0" prefHeight="30.0" prefWidth="143.0" styleClass="label-info" stylesheets="@designDashboard.css" text="Movie Tile: " />
+                                    <Button fx:id="acailableMovies_selectMovie" layoutX="83.0" layoutY="158.0" mnemonicParsing="false" onAction="#selectMovie" text="Select Movie" />
+                                    <Label fx:id="acailableMovies_movieGenre" layoutX="90.0" layoutY="59.0" prefHeight="30.0" prefWidth="143.0" styleClass="label-info" stylesheets="@designDashboard.css" />
+                                    <Label fx:id="acailableMovies_movieDate" layoutX="90.0" layoutY="101.0" prefHeight="30.0" prefWidth="143.0" styleClass="label-info" stylesheets="@designDashboard.css" />
                                  </children>
                               </AnchorPane>
-                              <TableView fx:id="acailableMovies_tableView" layoutX="276.0" layoutY="8.0" prefHeight="200.0" prefWidth="614.0" stylesheets="@designDashboard.css">
+                              <TableView fx:id="acailableMovies_tableView" layoutX="276.0" layoutY="8.0" onMouseClicked="#showAddMoviesList" prefHeight="200.0" prefWidth="614.0" stylesheets="@designDashboard.css">
                                 <columns>
                                   <TableColumn fx:id="acailableMovies_col_movieTitle" prefWidth="271.20001220703125" text="Movie Title" />
                                   <TableColumn fx:id="acailableMovies_col_genre" prefWidth="180.800048828125" text="Genre" />
@@ -497,20 +497,20 @@
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <ComboBox fx:id="editScreening_current" layoutX="101.0" layoutY="290.0" prefWidth="150.0" styleClass="combo-box" stylesheets="@designDashboard.css" />
-                              <Button fx:id="editScreening_delete" layoutX="173.0" layoutY="352.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="76.0" styleClass="delete-btn" stylesheets="@designDashboard.css" text="Delete" />
-                              <Button fx:id="editScreening_update" layoutX="35.0" layoutY="352.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="76.0" styleClass="update-btn" stylesheets="@designDashboard.css" text="Update" />
+                              <ComboBox fx:id="editScreening_current" layoutX="101.0" layoutY="290.0" onAction="#comboBox" prefWidth="150.0" styleClass="combo-box" stylesheets="@designDashboard.css" />
+                              <Button fx:id="editScreening_delete" layoutX="173.0" layoutY="352.0" mnemonicParsing="false" onAction="#clearEditScreening" prefHeight="47.0" prefWidth="76.0" styleClass="delete-btn" stylesheets="@designDashboard.css" text="Clear" />
+                              <Button fx:id="editScreening_update" layoutX="35.0" layoutY="352.0" mnemonicParsing="false" onAction="#updateEditScreening" prefHeight="47.0" prefWidth="76.0" styleClass="update-btn" stylesheets="@designDashboard.css" text="Update" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="318.0" layoutY="14.0" prefHeight="536.0" prefWidth="591.0" styleClass="bg-white" stylesheets="@designDashboard.css">
                            <children>
-                              <TextField fx:id="editScreening_search" layoutX="14.0" layoutY="28.0" prefHeight="28.0" prefWidth="196.0" stylesheets="@designDashboard.css">
+                              <TextField fx:id="editScreening_search" layoutX="14.0" layoutY="28.0" onAction="#searchEditScreening" onKeyTyped="#searchEditScreening" prefHeight="28.0" prefWidth="196.0" stylesheets="@designDashboard.css">
                                  <styleClass>
                                     <String fx:value="search" />
                                     <String fx:value="bg-white" />
                                  </styleClass>
                               </TextField>
-                              <TableView fx:id="editScreening_tableView" layoutX="8.0" layoutY="77.0" prefHeight="442.0" prefWidth="573.0">
+                              <TableView fx:id="editScreening_tableView" layoutX="8.0" layoutY="77.0" onMouseClicked="#searchEditScreening" prefHeight="442.0" prefWidth="573.0">
                                 <columns>
                                   <TableColumn fx:id="editScreening_col_movie" prefWidth="217.60003662109375" text="Movie" />
                                   <TableColumn fx:id="editScreening_col_genre" prefWidth="105.5999755859375" text="Genre" />
